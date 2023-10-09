@@ -1,38 +1,311 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Poppins:wght@300;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 85vw;
+  max-width: 1900px;
+  margin: 0rem auto;
 }
 
-.App-link {
-  color: #61dafb;
+:root {
+  --color-primario: #00abe4;
+  --color-primario-light: #00bfff84;
+  --color-dark: #080808;
+  --color-dark-light: #394048;
+  --color-light-opacity: rgba(208, 208, 208, 0.464);
+  --color-light: #f1f1f1;
+  --box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.08);
+  --box-shadow-neon: 0px 5px 45px rgb(0, 171, 228);
+  --box-shadow-neon-progress: 0px 0px 25px rgba(0, 171, 228, 0.612);
+  --transition: all 0.5s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700 !important;
+}
+
+body {
+  font-family: "Poppins", sans-serif !important;
+  line-height: 1.7;
+}
+
+a {
+  text-decoration: none !important;
+  color: var(--color-dark) !important;
+}
+
+.navbar {
+  position: absolute !important;
+  width: 100%;
+  z-index: 1;
+}
+
+.nav-logo {
+  width: 65px;
+  transition: var(--transition);
+}
+
+.navbar-light {
+  background-color: transparent !important;
+}
+
+/* ==== Home ==== */
+
+#inicio {
+  position: relative;
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3));
+  background-size: cover;
+}
+
+.inicio-titulo {
+  font-size: 72px;
+  font-weight: 300 !important;
+}
+
+.btn-neon {
+  border: 3px solid var(--color-primario) !important;
+  background-color: transparent !important;
+  color: var(--color-primario) !important;
+  font-size: 16px !important;
+  padding: 12px !important;
+  transition: var(--transition) !important;
+}
+
+.btn-neon:hover {
+  transform: translateY(-10px);
+  background-color: var(--color-primario) !important;
+  color: var(--color-light) !important;
+  box-shadow: var(--box-shadow-neon);
+}
+
+canvas {
+  top: 0;
+  left: 0;
+  z-index: -1;
+  position: fixed;
+}
+
+/* ==== Nosotros ==== */
+
+#nosotros {
+  background: var(--color-dark);
+  background-size: cover;
+}
+
+.imagen {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+i {
+  font-size: 24px;
+}
+
+.progress-bar {
+  background-color: var(--color-primario) !important;
+}
+
+.progress {
+  background-color: var(--color-light-opacity) !important;
+  transition: var(--transition);
+  box-shadow: var(--box-shadow-neon-progress);
+}
+
+/* ==== Parallax ==== */
+
+.parallax-container {
+  height: 600px;
+  position: relative;
+}
+
+.parallax-image {
+  transition: transform 0.3s ease-out;
+  border-radius: 10px;
+  margin: 10px;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.parallax-container:hover .parallax-image-1 {
+  box-shadow: var(--box-shadow-neon-progress);
+}
+
+.parallax-image-1 {
+  background-image: url("Assets/nosotros.jpg");
+}
+
+.parallax-image-2 {
+  background-image: url("Assets/Codingg.png");
+  background-size: cover;
+  background-position: center;
+  top: 25%;
+  height: 50%; /* Ajusta la altura según tus preferencias */
+}
+
+/* ==== Slider ==== */
+
+.carousel-item {
+  background-color: var(--color-dark);
+  height: 250px;
+}
+
+@media (max-width: 767.98px) {
+  .carousel-item {
+    height: 350px;
   }
-  to {
-    transform: rotate(360deg);
-  }
+}
+
+/* ==== Cards ==== */
+.card {
+  background: rgba(0, 0, 0, 0.3) !important;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37) !important;
+  backdrop-filter: blur(5px) !important;
+  -webkit-backdrop-filter: blur(5px) !important;
+  border-radius: 10px !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  transition: var(--transition) !important;
+}
+
+.card:hover {
+  transform: translateY(-20px);
+}
+
+.card-text {
+  color: var(--color-light) !important;
+  line-height: 3;
+  font-size: 14px !important;
+}
+.card-icon i,
+h3 {
+  color: var(--color-primario) !important;
+  font-size: 52px;
+}
+
+.bx-check {
+  color: #3ab066;
+}
+
+/* ==== portafolio ==== */
+#port {
+  overflow: hidden;
+}
+.port-titulo {
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.9));
+}
+.portbg {
+  position: relative;
+  height: 32rem;
+  transition: var(--transition);
+  overflow: hidden;
+}
+
+.portbg p {
+  font-size: 14px;
+}
+
+.portbg p,
+.portbg h3 {
+  position: relative; /* Asegura que el texto esté encima del superpuesto */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.405), rgba(0, 0, 0, 0.9));
+}
+
+.portbg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Esto asegura que la imagen cubra completamente el contenedor */
+}
+
+.portbg1,
+.portbg2,
+.portbg3,
+.portbg4 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: var(--transition);
+  overflow: hidden;
+}
+
+.portbg1:hover {
+  transform: scale(1.1);
+}
+
+.portbg2:hover {
+  transform: scale(1.1);
+}
+
+.portbg3:hover {
+  transform: scale(1.1);
+}
+.portbg4:hover {
+  transform: scale(1.1);
+}
+
+/* ==== contacto ==== */
+#contacto {
+  background-color: var(--color-dark);
+}
+
+.form-group label {
+  color: var(--color-light) !important;
+  margin-bottom: 8px;
+}
+
+.form-group input,
+textarea {
+  background-color: transparent !important;
+  border-color: var(--color-primario) !important;
+  color: var(--color-light) !important;
+  transition: var(--transition) !important;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  box-shadow: var(--box-shadow-neon);
+}
+
+.redes i {
+  color: var(--color-primario);
+  transition: var(--transition);
+}
+
+.redes i:hover {
+  transform: translateY(-10px);
+}
+
+.alert {
+  transition: var(--transition)!important;
+}
+
+
+/* ==== footer ==== */
+footer {
+  border-top: var(--color-light-opacity) 1px solid;
+  background-color: var(--color-dark);
 }
